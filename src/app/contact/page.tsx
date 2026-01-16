@@ -30,7 +30,7 @@ export default function Contact() {
                                     <Phone className="w-6 h-6 text-golden-yellow shrink-0" />
                                     <div>
                                         <h4 className="font-bold text-gray-800">Call Us</h4>
-                                        <p className="text-gray-600">518-000-0000</p>
+                                        <p className="text-gray-600"><a href="tel:+15182885654" className="hover:text-royal-blue">+1 (518) 288-5654</a></p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
