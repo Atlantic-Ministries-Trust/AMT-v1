@@ -14,7 +14,7 @@ export function Footer() {
                                 src="/images/logo.png"
                                 alt="Atlantic Ministries Trust"
                                 fill
-                                className="object-cover brightness-0 invert"
+                                className="object-cover"
                             />
                         </div>
                         <h3 className="font-serif text-lg font-bold">Atlantic Ministries Trust</h3>
