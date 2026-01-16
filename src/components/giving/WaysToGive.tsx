@@ -18,55 +18,46 @@ export function WaysToGive() {
 
             <div className="grid md:grid-cols-3 gap-6">
                 {/* Zelle */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex flex-col items-center text-center gap-4">
+                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
                         <span className="font-black text-2xl text-royal-blue">Zelle</span>
-                        <div className="bg-gray-50 px-4 py-2 rounded-lg font-mono font-bold text-lg text-gray-700 flex items-center gap-2">
-                            518-288-5864
-                            <button
-                                onClick={() => copyToClipboard("518-288-5864", "zelle")}
-                                className="text-gray-400 hover:text-royal-blue transition-colors"
-                            >
+                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-lg text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("518-288-5864", "zelle")}>
+                            <span className="truncate">518-288-5864</span>
+                            <span className="text-gray-400 group-hover:text-royal-blue transition-colors">
                                 {copied === "zelle" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
-                            </button>
+                            </span>
                         </div>
                         <p className="text-xs text-gray-500 font-medium">Use our phone number to find us.</p>
                     </div>
                 </div>
 
                 {/* Venmo */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex flex-col items-center text-center gap-4">
+                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
                         <span className="font-black text-2xl text-[#008CFF]">Venmo</span>
-                        <div className="bg-gray-50 px-4 py-2 rounded-lg font-mono font-bold text-lg text-gray-700 flex items-center gap-2">
-                            @AtlanticMinistriesTrust
-                            <button
-                                onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}
-                                className="text-gray-400 hover:text-[#008CFF] transition-colors"
-                            >
+                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-sm md:text-base text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}>
+                            <span className="truncate max-w-[200px]">@AtlanticMinistriesTrust</span>
+                            <span className="text-gray-400 group-hover:text-[#008CFF] transition-colors shrink-0">
                                 {copied === "venmo" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
-                            </button>
+                            </span>
                         </div>
-                        <a href="https://venmo.com/u/AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#008CFF] hover:underline">
+                        <a href="https://venmo.com/u/AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#008CFF] hover:underline mt-auto">
                             Open Venmo App
                         </a>
                     </div>
                 </div>
 
                 {/* Cash App */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex flex-col items-center text-center gap-4">
+                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
                         <span className="font-black text-2xl text-[#00D632]">Cash App</span>
-                        <div className="bg-gray-50 px-4 py-2 rounded-lg font-mono font-bold text-lg text-gray-700 flex items-center gap-2">
-                            $AtlanticMinistriesTrust
-                            <button
-                                onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}
-                                className="text-gray-400 hover:text-[#00D632] transition-colors"
-                            >
+                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-sm md:text-base text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}>
+                            <span className="truncate max-w-[200px]">$AtlanticMinistriesTrust</span>
+                            <span className="text-gray-400 group-hover:text-[#00D632] transition-colors shrink-0">
                                 {copied === "cashapp" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
-                            </button>
+                            </span>
                         </div>
-                        <a href="https://cash.app/$AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#00D632] hover:underline">
+                        <a href="https://cash.app/$AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#00D632] hover:underline mt-auto">
                             Open Cash App
                         </a>
                     </div>

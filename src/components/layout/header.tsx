@@ -220,70 +220,74 @@ export function Header() {
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-6 flex flex-col gap-6 animate-in slide-in-from-top-2 border-t border-gray-100">
-                    {navigation.map((item) => (
+                <div className="lg:hidden fixed inset-0 top-[88px] bg-white z-40 overflow-y-auto flex flex-col pb-safe-area-inset-bottom animate-in slide-in-from-top-2">
+                    <div className="flex flex-col gap-1 p-6 pb-32">
+                        {navigation.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={cn(
+                                    "text-xl font-bold py-4 border-b border-gray-100",
+                                    pathname === item.href ? "text-golden-yellow" : "text-royal-blue"
+                                )}
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
+
+                        {/* Campaigns (Mobile) */}
+                        <div className="pt-4 border-b border-gray-100 pb-4">
+                            <div className="text-sm font-black text-royal-blue/50 uppercase tracking-wide mb-3">
+                                Campaigns
+                            </div>
+                            <div className="flex flex-col gap-3 pl-2">
+                                {campaignLinks.map((c) => (
+                                    <Link
+                                        key={c.href}
+                                        href={c.href}
+                                        className={cn(
+                                            "text-lg font-bold",
+                                            pathname === c.href ? "text-golden-yellow" : "text-royal-blue"
+                                        )}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        {c.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Contact (Mobile) */}
                         <Link
-                            key={item.href}
-                            href={item.href}
+                            href="/contact"
                             className={cn(
-                                "text-lg font-bold py-2 border-b border-gray-100",
-                                pathname === item.href ? "text-golden-yellow" : "text-royal-blue"
+                                "text-xl font-bold py-4 border-b border-gray-100",
+                                pathname === "/contact" ? "text-golden-yellow" : "text-royal-blue"
                             )}
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            {item.name}
+                            Contact
                         </Link>
-                    ))}
 
-                    {/* Campaigns (Mobile) */}
-                    <div className="pt-2">
-                        <div className="text-sm font-extrabold text-royal-blue uppercase tracking-wide mb-2">
-                            Campaigns
-                        </div>
-                        <div className="flex flex-col gap-2">
-                            {campaignLinks.map((c) => (
-                                <Link
-                                    key={c.href}
-                                    href={c.href}
-                                    className={cn(
-                                        "text-base font-bold py-2 border-b border-gray-100",
-                                        pathname === c.href ? "text-golden-yellow" : "text-royal-blue"
-                                    )}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {c.name}
+                        <a
+                            href="https://atlanticflagpole.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xl font-bold py-4 border-b border-gray-100 text-royal-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Shop to Support
+                        </a>
+
+                        <div className="pt-6">
+                            <Button asChild className="w-full py-6 text-xl shadow-lg">
+                                <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
+                                    Donate
                                 </Link>
-                            ))}
+                            </Button>
                         </div>
                     </div>
-
-                    {/* Contact (Mobile) */}
-                    <Link
-                        href="/contact"
-                        className={cn(
-                            "text-lg font-bold py-2 border-b border-gray-100",
-                            pathname === "/contact" ? "text-golden-yellow" : "text-royal-blue"
-                        )}
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        Contact
-                    </Link>
-
-                    <a
-                        href="https://atlanticflagpole.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lg font-bold py-2 border-b border-gray-100 text-royal-blue"
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        Shop to Support
-                    </a>
-
-                    <Button asChild className="w-full py-4 text-lg">
-                        <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
-                            Donate
-                        </Link>
-                    </Button>
                 </div>
             )}
         </header>
