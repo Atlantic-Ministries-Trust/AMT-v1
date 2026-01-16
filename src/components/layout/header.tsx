@@ -76,8 +76,8 @@ export function Header() {
         setMobileMenuOpen(false);
     }, [pathname]);
 
-    // Dark text if: Scrolled OR Not Home
-    const useDarkTheme = isScrolled || !isHome;
+    // Dark text if: Scrolled OR Not Home OR Mobile Menu Open
+    const useDarkTheme = isScrolled || !isHome || mobileMenuOpen;
 
     const navLinkClass = (href: string) =>
         cn(
@@ -93,7 +93,7 @@ export function Header() {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled
+                (isScrolled || mobileMenuOpen)
                     ? "bg-white/95 backdrop-blur-md shadow-md py-3"
                     : isHome
                         ? "bg-transparent py-5"
@@ -220,7 +220,7 @@ export function Header() {
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                <div className="lg:hidden fixed inset-0 top-[88px] bg-white z-40 overflow-y-auto flex flex-col pb-safe-area-inset-bottom animate-in slide-in-from-top-2">
+                <div className="lg:hidden fixed inset-0 top-[72px] bg-white z-40 overflow-y-auto flex flex-col pb-safe-area-inset-bottom animate-in slide-in-from-top-2">
                     <div className="flex flex-col gap-1 p-6 pb-32">
                         {navigation.map((item) => (
                             <Link

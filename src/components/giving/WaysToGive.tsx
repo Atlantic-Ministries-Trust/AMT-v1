@@ -35,8 +35,8 @@ export function WaysToGive() {
                 <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
                     <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
                         <span className="font-black text-2xl text-[#008CFF]">Venmo</span>
-                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-sm md:text-base text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}>
-                            <span className="truncate max-w-[200px]">@AtlanticMinistriesTrust</span>
+                        <div className="bg-gray-50 w-full py-3 px-2 rounded-lg font-mono font-bold text-xs sm:text-sm md:text-base text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-2 group cursor-pointer break-all" onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}>
+                            <span>@AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#008CFF] transition-colors shrink-0">
                                 {copied === "venmo" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
                             </span>
@@ -51,8 +51,8 @@ export function WaysToGive() {
                 <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
                     <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
                         <span className="font-black text-2xl text-[#00D632]">Cash App</span>
-                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-sm md:text-base text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}>
-                            <span className="truncate max-w-[200px]">$AtlanticMinistriesTrust</span>
+                        <div className="bg-gray-50 w-full py-3 px-2 rounded-lg font-mono font-bold text-xs sm:text-sm md:text-base text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-2 group cursor-pointer break-all" onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}>
+                            <span>$AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#00D632] transition-colors shrink-0">
                                 {copied === "cashapp" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
                             </span>
