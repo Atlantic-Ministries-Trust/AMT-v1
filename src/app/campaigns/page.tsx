@@ -3,13 +3,24 @@ import { Footer } from "@/components/layout/footer";
 import { CampaignCard } from "@/components/CampaignCard";
 import { ShopToSupport } from "@/components/cta/ShopToSupport";
 import { WaysToGive } from "@/components/giving/WaysToGive";
-import { Heart, Utensils, Flag, Shield, Globe } from "lucide-react";
+import { Heart, Utensils, Flag, Shield, Globe, Users } from "lucide-react";
 
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Campaigns | Atlantic Ministries Trust",
-    description: "Explore our active campaigns: Do Good, Meals for Families, Veterans Support, Anti-Trafficking, and International Missions.",
+export const metadata = constructMetadata({
+    title: "Our Campaigns | Atlantic Ministries Trust 🚩",
+    description: "Explore our active campaigns from community meals to anti-trafficking. Join us in making a tangible difference. ✨",
+});
+
+import { campaigns } from "@/data/campaigns";
+
+const IconMap: { [key: string]: any } = {
+    flag: Flag,
+    heart: Heart,
+    users: Users,
+    utensils: Utensils,
+    shield: Shield,
+    globe: Globe,
 };
 
 export default function CampaignsHub() {
@@ -34,46 +45,19 @@ export default function CampaignsHub() {
             <section className="py-16 md:py-24">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Do Good */}
-                        <CampaignCard
-                            featured={true}
-                            title="Do Good: Patriot Edition"
-                            description="One Nation—Love Over Fear. Join us in choosing a positive, unifying response through prayer, service, and practical help."
-                            href="/campaigns/do-good"
-                            icon={<Flag size={28} />}
-                        />
-
-                        {/* Meals */}
-                        <CampaignCard
-                            title="Meals for Families & Kids"
-                            description="No family should have to choose between groceries and basic needs. Provide meals to those who need a helping hand."
-                            href="/campaigns/meals"
-                            icon={<Utensils size={28} />}
-                        />
-
-                        {/* Veterans + Dogs */}
-                        <CampaignCard
-                            title="Veterans + Unwanted Dogs"
-                            description="We help bring veterans and unwanted dogs together—offering companionship, renewed purpose, and practical support."
-                            href="/campaigns/veterans-dogs"
-                            icon={<Heart size={28} />}
-                        />
-
-                        {/* Anti-Trafficking */}
-                        <CampaignCard
-                            title="Combat Human Trafficking"
-                            description="Committed to combating child and sex trafficking through prevention, awareness, and survivor support."
-                            href="/campaigns/anti-trafficking"
-                            icon={<Shield size={28} />}
-                        />
-
-                        {/* Nigeria */}
-                        <CampaignCard
-                            title="Victory Church Nigeria"
-                            description="Support urgent needs including hunger relief, medicine, and safety improvements for our partners in Nigeria."
-                            href="/campaigns/victory-church-nigeria"
-                            icon={<Globe size={28} />}
-                        />
+                        {campaigns.map((c, i) => {
+                            const Icon = IconMap[c.waysToHelp[2]?.icon] || Flag;
+                            return (
+                                <CampaignCard
+                                    key={c.slug}
+                                    featured={i === 0}
+                                    title={c.heroTitle}
+                                    description={c.description.split('.')[0] + '.'}
+                                    href={`/campaigns/${c.slug}`}
+                                    icon={<Icon size={28} />}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
             </section>

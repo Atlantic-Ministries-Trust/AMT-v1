@@ -3,8 +3,18 @@ import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { constructMetadata } from "@/lib/metadata";
+
+export const metadata = constructMetadata({
+  title: "Atlantic Ministries Trust ✝️ Faith, Family, Freedom 🇺🇸",
+  description: "Serving the Great Commission from Schenectady to the ends of the earth. Join us in our mission of faith and service. 🙏",
+});
+
+import { campaigns } from "@/data/campaigns";
 
 export default function Home() {
+  const featuredCampaigns = campaigns.slice(0, 3);
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -48,68 +58,44 @@ export default function Home() {
       </section>
 
       {/* Mission Preview */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-bold text-royal-blue mb-8">Our Mission</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg">
-            We are dedicated to spreading the Light of Christ, preserving our godly heritage, and empowering the next generation of believers.
-            Through discipleship, community outreach, and patriotic education, we stand firm on the rock of ages.
-          </p>
+      <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-5xl font-black text-royal-blue mb-8 uppercase tracking-tight">Our Mission</h2>
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
+              We are a faith-based trust dedicated to serving the physical and spiritual needs of our community and the global church.
+              Through local outreach and international missions, we aim to be the hands and feet of Christ.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Campaigns Preview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl font-black text-royal-blue mb-4 uppercase tracking-tighter">Support a Campaign</h2>
-            <div className="h-1.5 w-24 bg-golden-yellow mx-auto rounded-full" />
+      {/* Discover Campaigns */}
+      <section className="py-24 bg-royal-blue text-white overflow-hidden relative">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 text-center md:text-left">
+            <div>
+              <h2 className="font-serif text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Support a Campaign</h2>
+              <p className="text-xl text-blue-100 max-w-2xl font-medium">Direct your support where it's needed most today.</p>
+            </div>
+            <Link href="/campaigns">
+              <Button variant="secondary" size="lg" className="font-black px-10 shadow-lg whitespace-nowrap">
+                Join our Mission ✝️
+              </Button>
+            </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Do Good - Featured */}
-            <div className="lg:col-span-3 bg-gradient-to-r from-royal-blue to-blue-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl group">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-              <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 justify-between">
-                <div className="text-center md:text-left space-y-4 max-w-2xl">
-                  <div className="inline-block bg-golden-yellow text-royal-blue font-black px-4 py-1 rounded-full text-sm uppercase tracking-wider mb-2">
-                    Featured Campaign
-                  </div>
-                  <h3 className="font-serif text-3xl md:text-5xl font-black uppercase tracking-tight">Do Good: Patriot Edition</h3>
-                  <p className="text-blue-100 text-lg md:text-xl font-medium">One Nation—Love Over Fear. Help us reach our <span className="text-golden-yellow font-black">$25,000 Goal</span> to strengthen communities and serve our neighbors.</p>
-                </div>
-                <Link href="/campaigns/do-good">
-                  <Button size="lg" className="bg-white text-royal-blue hover:bg-golden-yellow hover:text-royal-blue font-black text-xl px-10 py-8 shadow-lg transition-all transform group-hover:scale-105">
-                    Join the Movement
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Other Campaigns */}
-            <Link href="/campaigns/meals" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
-              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">Meals for Families</h3>
-              <p className="text-gray-600 mb-6 font-medium">Providing food and groceries to families and children in need.</p>
-              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
-                Learn More →
-              </span>
-            </Link>
-
-            <Link href="/campaigns/veterans-dogs" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
-              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">Veterans + Dogs</h3>
-              <p className="text-gray-600 mb-6 font-medium">Pairing veterans with unwanted dogs for companionship and purpose.</p>
-              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
-                Learn More →
-              </span>
-            </Link>
-
-            <Link href="/campaigns/victory-church-nigeria" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
-              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">International Mission</h3>
-              <p className="text-gray-600 mb-6 font-medium">Supporting Victory Church Nigeria with urgent relief and safety.</p>
-              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
-                Learn More →
-              </span>
-            </Link>
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredCampaigns.map((c) => (
+              <Link key={c.slug} href={`/campaigns/${c.slug}`} className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
+                <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">{c.heroTitle}</h3>
+                <p className="text-gray-600 mb-6 font-medium line-clamp-2">{c.description.split('.')[0]}.</p>
+                <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
+                  Learn More →
+                </span>
+              </Link>
+            ))}
           </div>
 
           <div className="text-center mt-12">

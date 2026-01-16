@@ -16,7 +16,7 @@ export function WaysToGive() {
         <div className="space-y-8">
             <h3 className="font-serif text-3xl font-black text-royal-blue text-center uppercase tracking-tight">Global Ways to Give</h3>
 
-            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto px-4">
                 {/* Zelle */}
                 <div className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
                     <div className="flex flex-col items-center text-center gap-6 flex-grow justify-center">
@@ -45,10 +45,10 @@ export function WaysToGive() {
                         </div>
                         <span className="font-black text-2xl text-[#008CFF] uppercase tracking-tight">Venmo</span>
                         <div
-                            className="bg-gray-50 w-full py-4 px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#008CFF]/20 transition-all cursor-pointer whitespace-nowrap"
+                            className="bg-gray-50 w-full py-4 px-2 sm:px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#008CFF]/20 transition-all cursor-pointer whitespace-nowrap overflow-hidden"
                             onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}
                         >
-                            <span>@AtlanticMinistriesTrust</span>
+                            <span className="max-w-none px-1">@AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#008CFF] transition-colors shrink-0">
                                 {copied === "venmo" ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                             </span>
@@ -68,10 +68,10 @@ export function WaysToGive() {
                         </div>
                         <span className="font-black text-2xl text-[#00D632] uppercase tracking-tight">Cash App</span>
                         <div
-                            className="bg-gray-50 w-full py-4 px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#00D632]/20 transition-all cursor-pointer whitespace-nowrap"
+                            className="bg-gray-50 w-full py-4 px-2 sm:px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#00D632]/20 transition-all cursor-pointer whitespace-nowrap overflow-hidden"
                             onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}
                         >
-                            <span>$AtlanticMinistriesTrust</span>
+                            <span className="max-w-none px-1">$AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#00D632] transition-colors shrink-0">
                                 {copied === "cashapp" ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                             </span>

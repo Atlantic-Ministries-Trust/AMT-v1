@@ -1,12 +1,12 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "About Us | Atlantic Ministries Trust",
-    description: "Meet the leadership, explore our history, and discover the vision behind Atlantic Ministries Trust.",
-};
+export const metadata = constructMetadata({
+    title: "About Us | Atlantic Ministries Trust ✝️",
+    description: "Meet the leadership, explore our history, and discover the vision behind Atlantic Ministries Trust. Serving Schenectady and beyond. ⛪",
+});
 
 export default function About() {
     return (

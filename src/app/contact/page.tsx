@@ -4,12 +4,12 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 import { ContactForm } from "@/components/forms/contact-form";
 
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Contact Us | Atlantic Ministries Trust",
-    description: "Get in touch with Atlantic Ministries Trust. Visit us in Schenectady, call, or send a message.",
-};
+export const metadata = constructMetadata({
+    title: "Contact Us | Atlantic Ministries Trust ✉️",
+    description: "Get in touch with Atlantic Ministries Trust. Visit us in Schenectady, call, or send a message. We look forward to hearing from you! 🙌",
+});
 
 export default function Contact() {
     return (

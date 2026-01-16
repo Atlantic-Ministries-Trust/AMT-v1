@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
 const resources = [
     { title: "The Gospel of John", type: "Reading Plan", description: "A 21-day journey through the life of Jesus." },
@@ -10,10 +10,10 @@ const resources = [
     { title: "Psalms of Comfort", type: "Reading List", description: "Selected Psalms for difficult times." },
 ];
 
-export const metadata: Metadata = {
-    title: "Scripture Resources | Atlantic Ministries Trust",
-    description: "A library of biblical readings, daily devotions, and study guides for the Christian walk.",
-};
+export const metadata = constructMetadata({
+    title: "Scripture Resources | Atlantic Ministries Trust 📖",
+    description: "Explore our library of biblical readings, daily devotions, and study guides to strengthen your walk with Christ. 🙌",
+});
 
 export default function ScriptureResources() {
     return (

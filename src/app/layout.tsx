@@ -2,31 +2,21 @@ import type { Metadata } from "next";
 import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 
+import { constructMetadata } from "@/lib/metadata";
+
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+  display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: "Atlantic Ministries Trust",
-  description: "Faith, Family, and Freedom. Serving the Great Commission from Schenectady to the Ends of the Earth.",
-  icons: {
-    icon: [
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-    ],
-  },
-  manifest: "/site.webmanifest",
-};
+export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,

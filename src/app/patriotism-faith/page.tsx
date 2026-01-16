@@ -2,12 +2,12 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
 
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Patriotism & Faith | Atlantic Ministries Trust",
-    description: "Exploring the biblical roots of American liberty. God and Country are complimentary, not contradictory.",
-};
+export const metadata = constructMetadata({
+    title: "Patriotism & Faith | Atlantic Ministries Trust 🇺🇸",
+    description: "Exploring the biblical roots of American liberty. God and Country are complimentary, not contradictory. ✝️",
+});
 
 export default function PatriotismFaith() {
     return (

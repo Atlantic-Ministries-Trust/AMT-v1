@@ -6,11 +6,12 @@ import { ShopToSupport } from "@/components/cta/ShopToSupport";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Ways to Give | Atlantic Ministries Trust",
-    description: "Support the mission. Donate via PayPal, Zelle, Venmo, Cash App, or Shop to Support.",
-};
+export const metadata = constructMetadata({
+    title: "Ways to Give | Support Our Mission 💝",
+    description: "Support Atlantic Ministries Trust through Zelle, Venmo, Cash App, or PayPal. Every gift helps support our campaigns and mission. 🙏",
+});
 
 export default function Donate() {
     return (

@@ -3,12 +3,12 @@ import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Discipleship & Outreach | Atlantic Ministries Trust",
-    description: "Training believers and serving the community. Join our Bible studies and outreach programs in Schenectady.",
-};
+export const metadata = constructMetadata({
+    title: "Discipleship & Outreach | Atlantic Ministries Trust 🤝",
+    description: "Training believers and serving the community. Join our Bible studies and outreach programs in Schenectady. ✝️",
+});
 
 export default function Discipleship() {
     return (
