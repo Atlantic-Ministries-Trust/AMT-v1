@@ -175,29 +175,40 @@ export function Header() {
                         href="https://atlanticflagpole.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={cn(
-                            "text-base font-semibold tracking-wide transition-colors hover:text-golden-yellow uppercase",
-                            useDarkTheme ? "text-royal-blue" : "text-white/90"
-                        )}
+                        className="flex items-center gap-2 group"
                     >
-                        Shop to Support
+                        <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
+                            <Image
+                                src="/images/heartflag.webp"
+                                alt="Heart Flag icon"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <span className={cn(
+                            "text-base font-semibold tracking-wide transition-colors group-hover:text-golden-yellow uppercase",
+                            useDarkTheme ? "text-royal-blue" : "text-white/90"
+                        )}>
+                            Shop to Support
+                        </span>
                     </a>
                 </nav>
 
                 {/* Action Buttons */}
                 <div className="hidden lg:flex items-center gap-3">
-                    <Link href="/contact">
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            className={cn(
-                                "font-black uppercase tracking-tight hover:bg-white/20",
-                                useDarkTheme ? "text-royal-blue hover:bg-royal-blue/10" : "text-white"
-                            )}
-                        >
-                            Contact
-                        </Button>
-                    </Link>
+                    <Button
+                        asChild
+                        variant={useDarkTheme ? "outline" : "outline"}
+                        size="lg"
+                        className={cn(
+                            "font-serif shadow-[4px_4px_0px_0px_rgba(0,0,0,0.15)] active:shadow-none active:translate-y-[2px] transition-all",
+                            useDarkTheme
+                                ? "border-royal-blue text-royal-blue hover:bg-royal-blue/5 shadow-[4px_4px_0px_0px_#1a237e]"
+                                : "border-white text-white hover:bg-white/10 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)]"
+                        )}
+                    >
+                        <Link href="/contact">Contact</Link>
+                    </Button>
                     <Button
                         asChild
                         variant={useDarkTheme ? "primary" : "secondary"}
@@ -258,30 +269,39 @@ export function Header() {
                             </div>
                         </div>
 
-                        {/* Contact (Mobile) */}
-                        <Link
-                            href="/contact"
-                            className={cn(
-                                "text-xl font-bold py-4 border-b border-gray-100",
-                                pathname === "/contact" ? "text-golden-yellow" : "text-royal-blue"
-                            )}
-                            onClick={() => setMobileMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
-
                         <a
                             href="https://atlanticflagpole.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xl font-bold py-4 border-b border-gray-100 text-royal-blue"
+                            className="text-xl font-bold py-4 border-b border-gray-100 text-royal-blue flex items-center gap-3"
                             onClick={() => setMobileMenuOpen(false)}
                         >
+                            <div className="relative h-6 w-6 shrink-0">
+                                <Image
+                                    src="/images/heartflag.webp"
+                                    alt="Heart Flag icon"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                             Shop to Support
                         </a>
 
-                        <div className="pt-6">
-                            <Button asChild className="w-full py-6 text-xl shadow-lg">
+                        <div className="pt-8 grid grid-cols-2 gap-4">
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full py-6 text-lg border-royal-blue text-royal-blue shadow-[4px_4px_0px_0px_#1a237e]"
+                            >
+                                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                                    Contact
+                                </Link>
+                            </Button>
+                            <Button
+                                asChild
+                                className="w-full py-6 text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.15)]"
+                                variant="primary"
+                            >
                                 <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
                                     Donate
                                 </Link>
