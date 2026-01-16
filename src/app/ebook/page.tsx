@@ -3,7 +3,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
-import { Copy, Check, Mail, BookOpen, Sparkles, ShieldCheck } from "lucide-react";
+import { Copy, Check, Mail, BookOpen, Sparkles, ShieldCheck, Heart, Users } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -69,34 +69,23 @@ export default function EbookPage() {
                             <h1 className="font-serif text-5xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-none">
                                 The Descending <br />Path
                             </h1>
+                            <h2 className="font-serif text-2xl md:text-3xl text-gray-500 italic font-bold">
+                                Finding True Strength Through the Way of the Servant
+                            </h2>
+                            <p className="text-lg font-bold text-gray-400 uppercase tracking-widest">By Michael P. Carlson</p>
 
-                            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
-                                A profound journey of faith and discovery. Pre-order your copy today and be among the first to receive this transformative work.
-                            </p>
-
-                            <div className="space-y-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-golden-yellow/20 flex items-center justify-center shrink-0">
-                                        <Mail className="text-royal-blue" size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-royal-blue">Instant PDF Delivery</h3>
-                                        <p className="text-gray-500">Upon confirmation of your donation, the eBook will be sent directly to your email inbox.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-golden-yellow/20 flex items-center justify-center shrink-0">
-                                        <ShieldCheck className="text-royal-blue" size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-royal-blue">Your Support Matters</h3>
-                                        <p className="text-gray-500">All proceeds go directly towards our community outreach and international missions.</p>
-                                    </div>
-                                </div>
+                            <div className="prose prose-lg text-gray-600 leading-relaxed font-medium">
+                                <p>
+                                    <strong>Feeling Burnt Out, Spiritually Stuck, or Tired of Performance-Based Faith?</strong>
+                                </p>
+                                <p>
+                                    Discover a Better Way—One That Jesus Walked First.
+                                    The Descending Path will show you how real strength, peace, and purpose are found through the quiet power of servanthood.
+                                </p>
                             </div>
 
                             <div className="pt-4">
-                                <Button size="lg" className="px-12 py-8 text-xl" onClick={() => document.getElementById('preorder-form')?.scrollIntoView({ behavior: 'smooth' })}>
+                                <Button size="lg" className="px-12 py-8 text-xl w-full sm:w-auto" onClick={() => document.getElementById('preorder-form')?.scrollIntoView({ behavior: 'smooth' })}>
                                     Secure Your Copy Now
                                 </Button>
                             </div>
@@ -105,9 +94,136 @@ export default function EbookPage() {
                 </div>
             </section>
 
+            {/* The Problem / The Invitation */}
+            <section className="py-24 bg-gray-50">
+                <div className="container mx-auto px-4 max-w-4xl space-y-24">
+                    {/* Problem */}
+                    <div className="space-y-8">
+                        <div className="text-center space-y-4">
+                            <div className="inline-block px-3 py-1 bg-red-100 text-red-600 font-bold text-xs uppercase tracking-widest rounded-full">The Struggle</div>
+                            <h2 className="font-serif text-3xl md:text-4xl font-black text-gray-900">The Problem So Many Christians Face Today</h2>
+                        </div>
+                        <div className="prose prose-xl mx-auto text-gray-600 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+                            <p>You’re trying to follow Jesus… You’re doing “all the right things”… But you still feel spiritually dry, anxious, or burned out.</p>
+                            <p className="font-bold text-gray-800">Deep down, you wonder:</p>
+                            <ul className="list-none space-y-2 pl-0">
+                                <li className="flex gap-2"><span className="text-red-400">✖</span> “Why do I feel so disconnected from God even though I’m serving Him?”</li>
+                                <li className="flex gap-2"><span className="text-red-400">✖</span> “Why does faith feel like pressure instead of peace?”</li>
+                                <li className="flex gap-2"><span className="text-red-400">✖</span> “What if I’ve been chasing the wrong kind of growth?”</li>
+                            </ul>
+                            <p>You’re not alone. Many sincere believers are quietly exhausted—burned out by performance, striving, and spiritual perfectionism.</p>
+                            <p className="text-xl font-bold text-royal-blue border-l-4 border-golden-yellow pl-4 italic">
+                                But Jesus offers a different way. A better way. A descending way.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Invitation */}
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6 order-2 md:order-1">
+                            <h2 className="font-serif text-3xl md:text-4xl font-black text-royal-blue">The Invitation: Walk the Path Jesus Walked</h2>
+                            <p className="text-lg text-gray-600 font-medium">
+                                Jesus didn’t climb. He knelt. He served. He surrendered.
+                            </p>
+                            <p className="text-lg text-gray-600 font-medium">
+                                And through that surrender came real power—resurrection power. This book is your invitation to follow Jesus down—not into defeat, but into deeper life.
+                            </p>
+                        </div>
+                        <div className="bg-royal-blue text-white p-10 rounded-[3rem] text-center space-y-6 shadow-2xl order-1 md:order-2">
+                            <div className="text-6xl mb-4">✝️</div>
+                            <h3 className="font-serif text-2xl font-bold italic">"He humbled himself..."</h3>
+                            <p className="text-blue-100">Philippians 2:8</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* My Story */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 max-w-3xl">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="h-1 flex-grow bg-gray-100" />
+                        <span className="text-gray-400 uppercase tracking-widest font-bold text-sm">Author's Note</span>
+                        <div className="h-1 flex-grow bg-gray-100" />
+                    </div>
+
+                    <h2 className="font-serif text-4xl font-black text-gray-900 mb-8 text-center">Why I Wrote This Book</h2>
+
+                    <div className="prose prose-lg text-gray-600 leading-relaxed">
+                        <p>There was a season where I was drained—emotionally, spiritually, even physically.</p>
+                        <p>I was doing ministry. I was helping others. But inside? I was empty.</p>
+                        <p>No matter how much I accomplished, I felt like I was falling behind spiritually.</p>
+                        <p>One day, in desperation, I opened to John 13—Jesus washing the disciples’ feet.</p>
+                        <p className="text-xl font-serif italic text-royal-blue">It hit me: I had been climbing, while Jesus was stooping.</p>
+                        <p>He didn’t seek applause. He didn’t perform for approval. He served out of intimacy with the Father. And He invited me to do the same.</p>
+                        <p>That moment began my journey down the Descending Path. It’s changed how I lead, how I serve, how I rest, and how I relate to God.</p>
+                        <p>I wrote this book for others like me—who are ready to stop striving and start walking in peace, purpose, and Christlike strength.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Discovery Section */}
+            <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
+                <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+                    <div className="text-center mb-16">
+                        <h2 className="font-serif text-3xl md:text-5xl font-black text-golden-yellow mb-6">What You’ll Discover Inside</h2>
+                        <div className="h-1 w-24 bg-white/20 mx-auto rounded-full" />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            "The surprising key to spiritual maturity (hint: it’s not doing more)",
+                            "The difference between performance-based faith and grace-driven formation",
+                            "Why going lower is the only way to grow stronger in Christ",
+                            "How to experience lasting peace—even in pressure-filled seasons",
+                            "How to lead your family, team, or ministry from a place of love—not burnout",
+                            "A daily posture of surrender that brings deeper intimacy with God"
+                        ].map((item, i) => (
+                            <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                                <div className="text-golden-yellow font-bold text-xl mb-4">✅</div>
+                                <p className="font-medium text-lg leading-relaxed">{item}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Imagine Section */}
+            <section className="py-24 bg-royal-blue/5">
+                <div className="container mx-auto px-4 text-center max-w-4xl">
+                    <h2 className="font-serif text-4xl font-black text-royal-blue mb-12">Imagine...</h2>
+                    <div className="grid md:grid-cols-2 gap-8 text-left">
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-royal-blue/10 flex items-start gap-4">
+                            <Sparkles className="text-golden-yellow shrink-0" size={32} />
+                            <p className="text-lg font-medium text-gray-700">Waking up with peace in your soul.</p>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-royal-blue/10 flex items-start gap-4">
+                            <Heart className="text-golden-yellow shrink-0" size={32} />
+                            <p className="text-lg font-medium text-gray-700">Serving others without chasing approval.</p>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-royal-blue/10 flex items-start gap-4">
+                            <Users className="text-golden-yellow shrink-0" size={32} />
+                            <p className="text-lg font-medium text-gray-700">Leading with humility.</p>
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-royal-blue/10 flex items-start gap-4">
+                            <ShieldCheck className="text-golden-yellow shrink-0" size={32} />
+                            <p className="text-lg font-medium text-gray-700">Resting in who you are—because your identity is secure in Christ.</p>
+                        </div>
+                    </div>
+                    <p className="mt-12 text-2xl font-serif italic text-royal-blue font-bold">That’s what happens when you walk the Descending Path.</p>
+                </div>
+            </section>
+
             {/* Donation/Pre-order Section */}
-            <section id="preorder-form" className="py-24 bg-gray-50 border-y border-gray-100">
+            <section id="preorder-form" className="py-24 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-4 max-w-7xl">
+                    <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+                        <div className="inline-block px-4 py-1.5 bg-golden-yellow text-royal-blue font-black rounded-full uppercase tracking-widest text-sm">Exclusive Pre-Order Offer</div>
+                        <h2 className="font-serif text-4xl md:text-5xl font-black text-royal-blue">Receive These Gifts</h2>
+                        <p className="text-xl text-gray-500">When you make a donation to support the release of The Descending Path today.</p>
+                    </div>
+
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         {/* Custom Give Box */}
                         <div className="bg-white rounded-3xl shadow-2xl border-2 border-gray-100 overflow-hidden">
@@ -190,44 +306,69 @@ export default function EbookPage() {
                             </div>
                         </div>
 
-                        {/* Info / FAQ */}
-                        <div className="space-y-12 lg:pt-12">
-                            <div>
-                                <h2 className="font-serif text-4xl font-black text-royal-blue uppercase tracking-tight mb-8">How it Works</h2>
-                                <div className="space-y-8">
-                                    <div className="flex gap-6">
-                                        <div className="w-12 h-12 rounded-2xl bg-royal-blue text-white flex items-center justify-center font-black text-xl shrink-0 shadow-lg">1</div>
-                                        <div>
-                                            <h4 className="text-xl font-bold text-royal-blue mb-2">Donate Any Amount</h4>
-                                            <p className="text-gray-600">While $100 is our suggested donation, we welcome any contribution. Every dollar supports our mission in Schenectady and beyond.</p>
-                                        </div>
+                        {/* Gift Breakdown */}
+                        <div className="space-y-8">
+                            <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 space-y-6">
+                                <h3 className="font-serif text-2xl font-black text-royal-blue uppercase">This Is a Donor-Supported Project</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">
+                                    This is more than just a book—it’s a mission. Your donation will help fund the editing, production, and outreach to get The Descending Path into the hands of believers, pastors, and ministries who desperately need it.
+                                </p>
+                                <p className="text-gray-600 font-medium">
+                                    <strong>Suggested Donation: $100</strong> <br />
+                                    But we believe in generosity, not guilt—so you’re free to give whatever amount God leads you to. Whether it’s $10 or $1,000, every donor receives the full pre-order package as a thank-you gift.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="flex gap-6 items-start p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center font-black text-xl shrink-0">📘</div>
+                                    <div>
+                                        <h4 className="font-bold text-royal-blue text-lg">The Full Ebook</h4>
+                                        <p className="text-gray-600 text-sm">200+ pages of spiritual formation, servant leadership, and grace-based transformation. <span className="text-xs font-bold text-gray-400 uppercase">(Value: $29)</span></p>
                                     </div>
-                                    <div className="flex gap-6">
-                                        <div className="w-12 h-12 rounded-2xl bg-royal-blue text-white flex items-center justify-center font-black text-xl shrink-0 shadow-lg">2</div>
-                                        <div>
-                                            <h4 className="text-xl font-bold text-royal-blue mb-2">Confirmation</h4>
-                                            <p className="text-gray-600">Once your donation is processed, our team receives an automated notification. Our systems verify the transaction against your provided email.</p>
-                                        </div>
+                                </div>
+                                <div className="flex gap-6 items-start p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center font-black text-xl shrink-0">🧠</div>
+                                    <div>
+                                        <h4 className="font-bold text-royal-blue text-lg">The Companion Workbook</h4>
+                                        <p className="text-gray-600 text-sm">Reflection questions, journal prompts, and spiritual practices to help you go deeper. <span className="text-xs font-bold text-gray-400 uppercase">(Value: $19)</span></p>
                                     </div>
-                                    <div className="flex gap-6">
-                                        <div className="w-12 h-12 rounded-2xl bg-royal-blue text-white flex items-center justify-center font-black text-xl shrink-0 shadow-lg">3</div>
-                                        <div>
-                                            <h4 className="text-xl font-bold text-royal-blue mb-2">Email Delivery</h4>
-                                            <p className="text-gray-600">The eBook PDF will be dispatched to your email address within 24 hours (usually much faster!). Make sure to check your spam folder just in case.</p>
-                                        </div>
+                                </div>
+                                <div className="flex gap-6 items-start p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-golden-yellow/20 text-royal-blue flex items-center justify-center font-black text-xl shrink-0">🧑‍🏫</div>
+                                    <div>
+                                        <h4 className="font-bold text-royal-blue text-lg">Leader’s Guide (Bonus)</h4>
+                                        <p className="text-gray-600 text-sm">Perfect for small groups or churches—includes session outlines, teaching points, and discussion guides. <span className="text-xs font-bold text-gray-400 uppercase">(Value: $25)</span></p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-6 items-start p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center font-black text-xl shrink-0">📥</div>
+                                    <div>
+                                        <h4 className="font-bold text-royal-blue text-lg">Early Access PDF</h4>
+                                        <p className="text-gray-600 text-sm">Read the book before its official release. <span className="text-xs font-bold text-gray-400 uppercase">(Value: Priceless)</span></p>
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="p-8 bg-royal-blue rounded-3xl text-white space-y-6 shadow-xl">
-                                <BookOpen className="text-golden-yellow" size={48} />
-                                <h3 className="font-serif text-3xl font-black uppercase tracking-tight">Why Pre-Order?</h3>
-                                <p className="text-blue-100 font-medium leading-relaxed">
-                                    "The Descending Path" is more than just a book; it's a testament to the work we are doing at Atlantic Ministries Trust.
-                                    By pre-ordering, you are providing the critical seed funding needed to expand our reach and touch more lives.
-                                </p>
-                            </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Join the Movement */}
+            <section className="py-24 bg-royal-blue text-white text-center">
+                <div className="container mx-auto px-4 max-w-4xl space-y-8">
+                    <h2 className="font-serif text-5xl font-black text-golden-yellow uppercase tracking-tight">Join the Movement</h2>
+                    <p className="text-2xl font-serif italic leading-relaxed text-blue-100">
+                        "The church doesn’t need louder leaders. It needs humbler ones. It needs people like you—willing to walk the path Jesus walked."
+                    </p>
+                    <div className="prose prose-xl prose-invert mx-auto">
+                        <p>If you’re ready to exchange performance for peace… Striving for surrender… And spiritual exhaustion for deeper love—</p>
+                        <p className="font-bold text-xl uppercase tracking-widest text-golden-yellow">Then The Descending Path is for you.</p>
+                    </div>
+                    <div className="pt-8">
+                        <Button size="lg" variant="secondary" className="px-12 py-8 text-xl shadow-xl" onClick={() => document.getElementById('preorder-form')?.scrollIntoView({ behavior: 'smooth' })}>
+                            Make Your Donation
+                        </Button>
                     </div>
                 </div>
             </section>

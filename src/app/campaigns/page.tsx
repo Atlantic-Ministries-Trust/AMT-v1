@@ -34,8 +34,8 @@ export default function CampaignsHub() {
                     <h1 className="font-serif text-4xl md:text-6xl font-black text-royal-blue mb-6 uppercase tracking-tight animate-fade-in-up">
                         Campaigns That Do Good
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up delay-100">
-                        Our campaigns are designed to bring hope through practical help, prayer, and action.
+                    <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium animate-fade-in-up delay-100">
+                        We believe in a faith that moves. Our campaigns are the engines of our mission—targeted, tangible initiatives designed to meet specific needs in our community and beyond. Whether it's feeding a hungry family, honoring a veteran, or fighting for the freedom of the oppressed, every campaign is an invitation to join us in doing good.
                     </p>
                     <div className="h-2 w-24 bg-golden-yellow mx-auto mt-8 rounded-full animate-fade-in-up delay-200" />
                 </div>
@@ -55,6 +55,7 @@ export default function CampaignsHub() {
                                     description={c.description.split('.')[0] + '.'}
                                     href={`/campaigns/${c.slug}`}
                                     icon={<Icon size={28} />}
+                                    image={c.image}
                                 />
                             );
                         })}

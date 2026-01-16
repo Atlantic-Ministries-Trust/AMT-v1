@@ -25,25 +25,27 @@ export interface Campaign {
         }[];
     };
     paypalItemNumber: string;
-    colorTheme: string; // 'royal' | 'gold' | 'red' etc.
+    colorTheme: string;
+    image: string;
 }
 
 export const campaigns: Campaign[] = [
     {
         slug: "do-good",
         title: "Do Good Campaign | Atlantic Ministries Trust 🇺🇸",
-        description: "One Nation—Love Over Fear. Raise the Flag. Lift Your Neighbor. Join the Do Good patriotic mission. ❤️",
+        description: "One Nation—Love Over Fear. Raise the Flag. Lift Your Neighbor. Join the Do Good patriotic mission to serve our community and honor our heritage. ❤️",
         heroMetadata: "Patriot Edition",
         heroLabel: "do-good",
         heroTitle: "DO GOOD",
         heroSubtitle: "One Nation—Love Over Fear",
         goal: "$25,000 Goal",
-        contentLead: "In a season of division, we’re choosing a positive, unifying response: prayer, service, and practical help. This campaign is nonpartisan and focused on serving people and strengthening community.",
+        contentLead: "In a season of division, we’re choosing a positive, unifying response: prayer, service, and practical help. This campaign is nonpartisan and focused on serving people, strengthening community, and reminding ourselves that we are one nation under God. We believe that small acts of kindness, rooted in faith, can bridge any divide.",
         fundsSupport: [
-            "Community Care",
-            "Unity Service Projects",
-            "Prayer + Discipleship Support",
-            "Essential operating costs directly tied to outreach"
+            "Local Community Care & Crisis Relief",
+            "Unity Service Projects & Neighborhood Cleanup",
+            "Prayer + Discipleship Support for local families",
+            "Essential operating costs directly tied to outreach",
+            "Supporting American heritage and values initiatives"
         ],
         waysToHelp: [
             { label: "Donate", icon: "heart" },
@@ -52,109 +54,114 @@ export const campaigns: Campaign[] = [
         ],
         pledge: {
             title: "The Do Good Pledge",
-            text: "“I will choose love over fear. I will respect others, serve someone outside my circle, pray for unity, and do one tangible act of good this week.”"
+            text: "“I will choose love over fear. I will respect others, serve someone outside my circle, pray for unity, and do one tangible act of good this week. I commit to being a light in my community.”"
         },
         paypalItemNumber: "Do Good Campaign",
-        colorTheme: "royal"
+        colorTheme: "royal",
+        image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop"
     },
     {
         slug: "meals",
         title: "Meals for Families & Kids | Atlantic Ministries Trust 🍲",
-        description: "Providing meals and food support to households and children who need a helping hand. Join the mission to feed families. 🥣",
+        description: "Providing meals and food support to households and children who need a helping hand. Join the mission to fight hunger and show Christ's love through provision. 🥣",
         heroMetadata: "Community Support",
         heroLabel: "meals",
-        heroTitle: "Meals for Families & Kids",
-        heroSubtitle: "\"No family should have to choose between groceries and basic needs.\"",
-        contentLead: "Your giving helps provide meals and food support to households and children who need a helping hand. We believe that no one in our community should go hungry.",
+        heroTitle: "MEALS FOR FAMILIES",
+        heroSubtitle: "Love Served Warm",
+        goal: "Feed 500 Families",
+        contentLead: "The kitchen table is where hearts are opened and communities are built. We are partnering with local food pantries and farms to ensure no family in our city goes to bed hungry.",
         fundsSupport: [
-            "Emergency Food Relief",
-            "School Weekend Bags",
-            "Holiday Meal Support",
-            "Local Food Pantry Partnerships"
+            "Weekly grocery distribution for at-risk families",
+            "Hot meal service at the community center",
+            "Weekend food bags for school children",
+            "Support for local urban farming initiatives",
+            "Emergency food relief fund"
         ],
         waysToHelp: [
-            { label: "Donate", icon: "heart" },
-            { label: "Food Drives", icon: "utensils" },
-            { label: "Local Partners", icon: "globe" }
+            { label: "Give Food", icon: "utensils" },
+            { label: "Serve Meals", icon: "heart" },
+            { label: "Donate", icon: "sparkles" }
         ],
-        howItWorks: {
-            title: "How It Works",
-            steps: [
-                { title: "You Give", text: "Your donations directly fund the purchase of food and groceries." },
-                { title: "We Coordinate", text: "We distribute support directly to families or work with trusted partners to maximize impact." },
-                { title: "We Share Outcomes", text: "We report on the impact while strictly protecting the privacy and dignity of recipients." }
-            ]
-        },
         paypalItemNumber: "Meals Campaign",
-        colorTheme: "royal"
+        colorTheme: "golden",
+        image: "/images/campaign-meals.png"
     },
     {
         slug: "veterans-dogs",
-        title: "Veterans + Unwanted Dogs | Support Our Heroes 🐕",
-        description: "Your gift helps provide training and care for unwanted dogs that will serve as companions to veterans. Supporting those who served. 🇺🇸",
-        heroMetadata: "Veterans Initiative",
-        heroLabel: "veterans",
-        heroTitle: "Veterans + Unwanted Dogs",
-        heroSubtitle: "\"Providing companionship and renewed purpose.\"",
-        contentLead: "We believe in supporting those who have served our country. This initiative pairs veterans with unwanted dogs, providing a second chance for both.",
+        title: "Veterans + Dogs | Atlantic Ministries Trust 🐕",
+        description: "Healing heroes with four-legged companions. Supporting the training and placement of service dogs with veterans. 🇺🇸",
+        heroMetadata: "Service & Honor",
+        heroLabel: "veterans-dogs",
+        heroTitle: "VETERANS + DOGS",
+        heroSubtitle: "Healing Heroes, One Paw at a Time",
+        goal: "Sponsor 5 Teams",
+        contentLead: "We owe a debt of gratitude to those who served. This campaign bridges the gap for veterans struggling with PTSD by connecting them with trained service dogs, fostering a bond that saves lives.",
         fundsSupport: [
-            "Professional Dog Training",
-            "Veterinary Care & Supplies",
-            "Veteran Outreach Programs",
-            "Shelter Partnership Costs"
+            "Sponsorship of service dog training programs",
+            "Veterinary care for service animals",
+            "Placement and integration support for veterans",
+            "Awareness events for veteran mental health",
+            "Essential gear for service dog teams"
         ],
         waysToHelp: [
-            { label: "Donate", icon: "heart" },
-            { label: "Adopt/Foster", icon: "dog" },
-            { label: "Awareness", icon: "info" }
+            { label: "Sponsor a Dog", icon: "dog" },
+            { label: "Volunteer", icon: "users" },
+            { label: "Donate", icon: "heart" }
         ],
-        paypalItemNumber: "Veterans + Dogs Campaign",
-        colorTheme: "royal"
+        paypalItemNumber: "Veterans + Dogs",
+        colorTheme: "navy",
+        image: "/images/campaign-veterans.png"
     },
     {
         slug: "anti-trafficking",
-        title: "Anti-Trafficking Mission | Combat Child & Sex Trafficking 🛡️",
-        description: "Support our efforts to combat child and sex trafficking through prayer, awareness, and direct support to frontline organizations. ⚔️",
-        heroMetadata: "Protect the Vulnerable",
+        title: "Anti-Trafficking | Atlantic Ministries Trust 🛡️",
+        description: "Shining a light in the darkness. Prevention, rescue, and restoration for survivors of human trafficking. 🕯️",
+        heroMetadata: "Justice & Rescue",
         heroLabel: "anti-trafficking",
-        heroTitle: "Combat Child & Sex Trafficking",
-        heroSubtitle: "\"Stop Exploitation. Restore Dignity.\"",
-        contentLead: "We are committed to combating child and sex trafficking through prevention, awareness, and survivor support—working with trusted, vetted partners and local resources.",
+        heroTitle: "ANTI-TRAFFICKING",
+        heroSubtitle: "Freedom is Non-Negotiable",
+        goal: "$50,000 Rescue Fund",
+        contentLead: "Modern-day slavery is a reality we cannot ignore. We are committed to funding rescue operations, providing safe houses for survivors, and educating our youth to prevent exploitation before it starts.",
         fundsSupport: [
-            "Frontline NGO Grants",
-            "Awareness Campaigns",
-            "Survivor Recovery Support",
-            "Prevention Education"
+            "Direct support for rescue organizations",
+            "Safe house operational costs and security",
+            "Trauma counseling and rehabilitation for survivors",
+            "Prevention education in local schools",
+            "Legal advocacy for victims"
         ],
         waysToHelp: [
-            { label: "Donate", icon: "heart" },
-            { label: "Pray for Safety", icon: "shield" },
-            { label: "Learn Signs", icon: "alert" }
+            { label: "Donate", icon: "shield" },
+            { label: "Educate", icon: "info" },
+            { label: "Pray", icon: "alert-triangle" }
         ],
-        paypalItemNumber: "Anti-Trafficking Campaign",
-        colorTheme: "royal"
+        paypalItemNumber: "Anti-Trafficking",
+        colorTheme: "dark",
+        image: "/images/campaign-anti-trafficking.png"
     },
     {
         slug: "victory-church-nigeria",
-        title: "Victory Church Nigeria | Global Missions 🇳🇬",
-        description: "Partnering with Victory Church in Nigeria to support local ministry, community outreach, and the expansion of the Gospel. ✝️",
+        title: "Victory Church Nigeria | Atlantic Ministries Trust 🇳🇬",
+        description: "Building faith across the ocean. Supporting our partner church in Nigeria with resources, prayer, and mission trips. 🌍",
         heroMetadata: "Global Missions",
-        heroLabel: "missions",
-        heroTitle: "Victory Church Nigeria",
-        heroSubtitle: "\"Empowering Local Ministry, Reaching the World.\"",
-        contentLead: "We are proud to partner with Victory Church in Nigeria, supporting their vital work on the ground to provide spiritual leadership and community aid.",
+        heroLabel: "victory-church-nigeria",
+        heroTitle: "VICTORY CHURCH",
+        heroSubtitle: "A Light in West Africa",
+        goal: "Building Fund",
+        contentLead: "The Gospel knows no borders. Our partnership with Victory Church in Nigeria is about equipping local leaders to preach the Word, serve their communities, and bring the hope of Christ to West Africa.",
         fundsSupport: [
-            "Local Outreach Projects",
-            "Children's Ministry",
-            "Leadership Training",
-            "Community Infrastructure"
+            "Construction and maintenance of church facilities",
+            "Pastoral training and leadership development",
+            "Community medical and educational outreach",
+            "Bibles and discipleship materials in local dialects",
+            "Mission trip logistics and support"
         ],
         waysToHelp: [
-            { label: "Donate", icon: "heart" },
-            { label: "Mission Trips", icon: "globe" },
-            { label: "Prayer Partners", icon: "users" }
+            { label: "Give", icon: "globe" },
+            { label: "Go", icon: "plane" },
+            { label: "Pray", icon: "heart" }
         ],
         paypalItemNumber: "Victory Church Nigeria",
-        colorTheme: "royal"
+        colorTheme: "green",
+        image: "/images/campaign-nigeria.png"
     }
 ];

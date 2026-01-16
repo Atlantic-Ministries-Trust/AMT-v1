@@ -9,20 +9,28 @@ interface CampaignCardProps {
     icon?: React.ReactNode;
     color?: string;
     featured?: boolean;
+    image?: string;
 }
 
-export function CampaignCard({ title, description, href, icon, color = "bg-royal-blue", featured = false }: CampaignCardProps) {
+export function CampaignCard({ title, description, href, icon, color = "bg-royal-blue", featured = false, image }: CampaignCardProps) {
     return (
         <Link
             href={href}
             className={cn(
-                "group relative overflow-hidden rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full",
+                "group relative overflow-hidden rounded-3xl border-2 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full",
                 featured
                     ? "bg-royal-blue border-royal-blue text-white shadow-lg"
                     : "bg-white border-gray-100 hover:border-golden-yellow/50"
             )}
         >
-            <div className="p-8 flex flex-col h-full">
+            {/* Background Image (Lower opacity for better text readability) */}
+            {image && (
+                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700">
+                    <img src={image} alt="" className="w-full h-full object-cover" />
+                </div>
+            )}
+
+            <div className="p-8 flex flex-col h-full relative z-10">
                 {icon && (
                     <div className={cn(
                         "w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110",
