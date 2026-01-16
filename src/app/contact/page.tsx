@@ -2,6 +2,14 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail } from "lucide-react";
+import Image from "next/image";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact Us | Atlantic Ministries Trust",
+    description: "Get in touch with Atlantic Ministries Trust. Visit us in Schenectady, call, or send a message.",
+};
 
 export default function Contact() {
     return (
@@ -43,45 +51,39 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        {/* Map Placeholder */}
-                        <div className="h-[300px] bg-gray-200 rounded-xl relative overflow-hidden flex items-center justify-center text-gray-500">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2930.347529683!2d-73.91!3d42.81!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de720000000000%3A0x0!2zMTczNyBVbmlvbiBTdCAjMTczLCBTY2hlbmVjdGFkeSwgTlkgMTIzMDk!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                className="absolute inset-0 grayscale contrast-[.8]"
+                        <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg border-2 border-golden-yellow/20">
+                            <Image
+                                src="/images/contact-hero.png"
+                                alt="Connect with Atlantic Ministries"
+                                fill
+                                className="object-cover"
                             />
-                            <span className="relative z-10 bg-white/80 p-2 rounded pointer-events-none">Map View</span>
                         </div>
                     </div>
 
                     {/* Form */}
                     <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                         <h3 className="font-serif text-2xl font-bold text-royal-blue mb-6">Send a Message</h3>
-                        <form className="space-y-6">
+                        <form className="space-y-6" action="mailto:info@atlanticministries.org" method="post" encType="text/plain">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-700">First Name</label>
-                                    <input type="text" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
+                                    <input type="text" name="firstName" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-700">Last Name</label>
-                                    <input type="text" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
+                                    <input type="text" name="lastName" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Email Address</label>
-                                <input type="email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
+                                <input type="email" name="email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Message</label>
-                                <textarea rows={5} className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all"></textarea>
+                                <textarea name="message" rows={5} className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-royal-blue focus:border-transparent outline-none transition-all"></textarea>
                             </div>
-                            <Button className="w-full py-6 text-lg">Send Message</Button>
+                            <Button className="w-full py-6 text-lg" type="submit">Send Message</Button>
                         </form>
                     </div>
                 </div>

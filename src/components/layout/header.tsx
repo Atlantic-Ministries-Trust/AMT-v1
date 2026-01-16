@@ -21,6 +21,7 @@ export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const pathname = usePathname();
+    const isHome = pathname === "/";
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,45 +31,52 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Determine if we should show dark text/UI
+    // Dark text if: Scrolled OR Not Home (inner pages usually have white bg)
+    const useDarkTheme = isScrolled || !isHome;
+
     return (
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-white/95 backdrop-blur-md shadow-md py-2"
-                    : "bg-transparent py-4"
+                    ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+                    : isHome ? "bg-transparent py-5" : "bg-white py-5 shadow-sm"
             )}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2">
-                    <div className="relative h-10 w-10 md:h-12 md:w-12">
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className={cn(
+                        "relative h-12 w-12 md:h-14 md:w-14 rounded-full overflow-hidden border-2 transition-colors",
+                        useDarkTheme ? "border-royal-blue/20" : "border-golden-yellow/30"
+                    )}>
                         <Image
                             src="/images/logo.png"
                             alt="Atlantic Ministries Trust"
                             fill
-                            className="object-contain"
+                            className="object-cover"
                         />
                     </div>
                     <span className={cn(
-                        "font-serif font-bold text-lg md:text-xl tracking-tight",
-                        isScrolled ? "text-royal-blue" : "text-white"
+                        "font-serif font-bold text-xl md:text-2xl tracking-tight transition-colors group-hover:opacity-80",
+                        useDarkTheme ? "text-royal-blue" : "text-white"
                     )}>
                         Atlantic Ministries
                     </span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-6">
+                <nav className="hidden lg:flex items-center gap-8">
                     {navigation.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "text-sm font-medium transition-colors hover:text-golden-yellow",
+                                "text-base font-semibold tracking-wide transition-colors hover:text-golden-yellow uppercase",
                                 pathname === item.href
                                     ? "text-golden-yellow"
-                                    : isScrolled ? "text-gray-800" : "text-white/90"
+                                    : useDarkTheme ? "text-royal-blue" : "text-white/90"
                             )}
                         >
                             {item.name}
@@ -78,7 +86,7 @@ export function Header() {
 
                 {/* Action Button */}
                 <div className="hidden lg:block">
-                    <Button variant={isScrolled ? "primary" : "secondary"} size="sm">
+                    <Button variant={useDarkTheme ? "primary" : "secondary"} size="lg" className="font-serif">
                         Give Now
                     </Button>
                 </div>
@@ -89,30 +97,30 @@ export function Header() {
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? (
-                        <X className={isScrolled ? "text-gray-800" : "text-white"} />
+                        <X className={useDarkTheme ? "text-royal-blue" : "text-white"} />
                     ) : (
-                        <Menu className={isScrolled ? "text-gray-800" : "text-white"} />
+                        <Menu className={useDarkTheme ? "text-royal-blue" : "text-white"} />
                     )}
                 </button>
             </div>
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-4 flex flex-col gap-4 animate-in slide-in-from-top-2">
+                <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-6 flex flex-col gap-6 animate-in slide-in-from-top-2 border-t border-gray-100">
                     {navigation.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "text-base font-medium py-2 border-b border-gray-100",
-                                pathname === item.href ? "text-royal-blue" : "text-gray-600"
+                                "text-lg font-bold py-2 border-b border-gray-100",
+                                pathname === item.href ? "text-golden-yellow" : "text-royal-blue"
                             )}
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {item.name}
                         </Link>
                     ))}
-                    <Button className="w-full mt-2">Give Now</Button>
+                    <Button className="w-full py-4 text-lg">Give Now</Button>
                 </div>
             )}
         </header>

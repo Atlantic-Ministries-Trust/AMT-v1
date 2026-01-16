@@ -1,6 +1,14 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Who We Are | Atlantic Ministries Trust",
+    description: "Meet the leadership team and discover the vision behind Atlantic Ministries Trust. Faith, Family, and Freedom.",
+};
 
 export default function WhoWeAre() {
     return (
@@ -16,17 +24,25 @@ export default function WhoWeAre() {
                 {/* Content */}
                 <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
                     <div className="space-y-6">
-                        <h2 className="font-serif text-2xl font-bold text-gray-800">Leadership & Vision</h2>
-                        <p className="text-gray-600 leading-relaxed">
-                            Atlantic Ministries Trust is led by a dedicated team of believers who share a profound love for both our Country and Christ.
-                            We believe that true leadership starts with service, and our mission is to serve the community of Schenectady and beyond.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed">
-                            Our leadership is committed to the Great Commission, ensuring that every action we take honors God and strengthens our nation's spiritual foundation.
-                        </p>
+                        <h2 className="font-serif text-3xl font-bold text-gray-800">Leadership & Vision</h2>
+                        <div className="prose prose-lg text-gray-600 leading-relaxed">
+                            <p>
+                                Atlantic Ministries Trust is led by a dedicated team of believers who share a profound love for both our Country and Christ.
+                                We believe that true leadership starts with service, and our mission is to serve the community of Schenectady and beyond.
+                            </p>
+                            <p>
+                                Our leadership is committed to the Great Commission, ensuring that every action we take honors God and strengthens our nation's spiritual foundation.
+                                We are not just an organization; we are a family united by a common purpose to see revival in our land.
+                            </p>
+                        </div>
                     </div>
-                    <div className="bg-gray-100 h-[400px] rounded-lg border border-gray-200 flex items-center justify-center text-gray-400">
-                        [Leadership Team Image Placeholder]
+                    <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                        <Image
+                            src="/images/leadership.png"
+                            alt="Atlantic Ministries Trust Leadership Team"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-700"
+                        />
                     </div>
                 </div>
 

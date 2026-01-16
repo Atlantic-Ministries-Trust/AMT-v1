@@ -1,5 +1,13 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import Image from "next/image";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Patriotism & Faith | Atlantic Ministries Trust",
+    description: "Exploring the biblical roots of American liberty. God and Country are complimentary, not contradictory.",
+};
 
 export default function PatriotismFaith() {
     return (
@@ -12,6 +20,18 @@ export default function PatriotismFaith() {
                 </div>
 
                 <div className="max-w-4xl mx-auto space-y-12">
+                    <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl border-4 border-white mb-8">
+                        <Image
+                            src="/images/patriotic.png"
+                            alt="Eagle, Cross and Flag"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                            <p className="text-white text-xl font-serif italic">"God and Country"</p>
+                        </div>
+                    </div>
+
                     <div className="prose prose-lg mx-auto text-gray-600">
                         <p>
                             We believe that love for God and love for country are not mutually exclusive but complimentary.
@@ -27,6 +47,7 @@ export default function PatriotismFaith() {
                         <p>
                             A Christian patriot is one who prays for their leaders, obeys just laws, stands against injustice,
                             and actively works for the peace and prosperity of their city (Jeremiah 29:7).
+                            We reject the notion that faith should be private; rather, it should inform every aspect of our public life.
                         </p>
                     </div>
 

@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 
 const donationOptions = [
     {
@@ -20,6 +21,11 @@ const donationOptions = [
         description: "Direct your gift to a specific cause: Outreach, Building, or Patriotism."
     },
 ];
+
+export const metadata: Metadata = {
+    title: "Donate | Atlantic Ministries Trust",
+    description: "Support the mission of Atlantic Ministries Trust. Your giving helps us advance the Kingdom and preserve our heritage.",
+};
 
 export default function Donate() {
     return (
@@ -52,9 +58,11 @@ export default function Donate() {
                     <p className="text-gray-600 mb-8">
                         All transactions are processed securely via PayPal. You can use a Credit Card, Debit Card, or PayPal account.
                     </p>
-                    <Button size="lg" className="px-12 py-6 text-lg shadow-lg">
-                        Proceed to PayPal
-                    </Button>
+                    <div className="flex flex-col md:flex-row gap-4 justify-center">
+                        <Button size="lg" className="px-12 py-6 text-lg shadow-lg" asChild>
+                            <a href="https://www.paypal.com/donate" target="_blank" rel="noopener noreferrer">Proceed to PayPal</a>
+                        </Button>
+                    </div>
                     <p className="text-xs text-gray-400 mt-4">
                         *You will be redirected to PayPal's secure portal.
                     </p>

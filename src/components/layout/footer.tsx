@@ -9,12 +9,12 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <div className="relative h-16 w-16 mb-4">
+                        <div className="relative h-16 w-16 mb-4 rounded-full overflow-hidden border-2 border-white/20 bg-white/10 p-1">
                             <Image
                                 src="/images/logo.png"
                                 alt="Atlantic Ministries Trust"
                                 fill
-                                className="object-contain brightness-0 invert"
+                                className="object-cover brightness-0 invert"
                             />
                         </div>
                         <h3 className="font-serif text-lg font-bold">Atlantic Ministries Trust</h3>
