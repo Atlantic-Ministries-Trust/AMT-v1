@@ -2,11 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
-// Start with simple button since we didn't install cva yet, wait, I forgot cva.
-// I'll install class-variance-authority next. Used often.
-// For now, I'll write it without cva or install it quickly.
-// Actually, I'll stick to simple props for now to save time, or use clsx directly.
-// But standard shadcn-like uses cva. I'll just use clsx/tailwind for now.
+// Button component using standard Tailwind classes
 
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
