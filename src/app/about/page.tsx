@@ -4,18 +4,18 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Who We Are | Atlantic Ministries Trust",
+    title: "About Us | Atlantic Ministries Trust",
     description: "Meet the leadership, explore our history, and discover the vision behind Atlantic Ministries Trust.",
 };
 
-export default function WhoWeAre() {
+export default function About() {
     return (
         <main className="min-h-screen bg-white">
             <Header />
             <div className="pt-32 pb-16 px-4 container mx-auto animate-fade-in-up md:pt-40">
                 {/* Title */}
                 <div className="text-center mb-16">
-                    <h1 className="font-serif text-4xl md:text-5xl font-black text-royal-blue mb-4 uppercase tracking-tighter">Who We Are</h1>
+                    <h1 className="font-serif text-4xl md:text-5xl font-black text-royal-blue mb-4 uppercase tracking-tighter">About Us</h1>
                     <div className="h-1.5 w-24 bg-golden-yellow mx-auto rounded-full" />
                 </div>
 

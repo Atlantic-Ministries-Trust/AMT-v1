@@ -9,11 +9,9 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Who We Are", href: "/who-we-are" },
+    { name: "About", href: "/about" },
     { name: "Discipleship", href: "/discipleship-outreach" },
     { name: "Patriotism", href: "/patriotism-faith" },
-    { name: "Contact", href: "/contact" },
 ];
 
 const campaignLinks = [
@@ -129,7 +127,7 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-8">
+                <nav className="hidden xl:flex items-center gap-6">
                     {navigation.map((item) => (
                         <Link key={item.href} href={item.href} className={navLinkClass(item.href)}>
                             {item.name}
@@ -172,11 +170,6 @@ export function Header() {
                         </div>
                     </details>
 
-                    {/* Donate */}
-                    <Link href="/donate" className={navLinkClass("/donate")}>
-                        Donate
-                    </Link>
-
                     {/* Shop to Support (External) */}
                     <a
                         href="https://atlanticflagpole.com"
@@ -191,15 +184,27 @@ export function Header() {
                     </a>
                 </nav>
 
-                {/* Action Button */}
-                <div className="hidden lg:block">
+                {/* Action Buttons */}
+                <div className="hidden lg:flex items-center gap-3">
+                    <Link href="/contact">
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className={cn(
+                                "font-black uppercase tracking-tight hover:bg-white/20",
+                                useDarkTheme ? "text-royal-blue hover:bg-royal-blue/10" : "text-white"
+                            )}
+                        >
+                            Contact
+                        </Button>
+                    </Link>
                     <Button
                         asChild
                         variant={useDarkTheme ? "primary" : "secondary"}
                         size="lg"
-                        className="font-serif"
+                        className="font-serif shadow-[4px_4px_0px_0px_rgba(0,0,0,0.15)] active:shadow-none active:translate-y-[2px] transition-all"
                     >
-                        <Link href="/donate">Give Now</Link>
+                        <Link href="/donate">Donate</Link>
                     </Button>
                 </div>
 
@@ -252,16 +257,16 @@ export function Header() {
                         </div>
                     </div>
 
-                    {/* Donate + External (Mobile) */}
+                    {/* Contact (Mobile) */}
                     <Link
-                        href="/donate"
+                        href="/contact"
                         className={cn(
                             "text-lg font-bold py-2 border-b border-gray-100",
-                            pathname === "/donate" ? "text-golden-yellow" : "text-royal-blue"
+                            pathname === "/contact" ? "text-golden-yellow" : "text-royal-blue"
                         )}
                         onClick={() => setMobileMenuOpen(false)}
                     >
-                        Donate
+                        Contact
                     </Link>
 
                     <a
@@ -276,7 +281,7 @@ export function Header() {
 
                     <Button asChild className="w-full py-4 text-lg">
                         <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
-                            Give Now
+                            Donate
                         </Link>
                     </Button>
                 </div>

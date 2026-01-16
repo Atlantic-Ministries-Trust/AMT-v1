@@ -46,7 +46,7 @@ export function Footer() {
                     <div className="space-y-4">
                         <h4 className="font-serif text-lg font-bold text-golden-yellow">Quick Links</h4>
                         <ul className="space-y-2 text-sm text-gray-300">
-                            <li><Link href="/who-we-are" className="hover:text-white transition-colors">Who We Are</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
                             <li><Link href="/discipleship-outreach" className="hover:text-white transition-colors">Discipleship</Link></li>
                             <li><Link href="/scripture-resources" className="hover:text-white transition-colors">Scripture Resources</Link></li>
                             <li><Link href="/campaigns" className="hover:text-white transition-colors">Campaigns</Link></li>
