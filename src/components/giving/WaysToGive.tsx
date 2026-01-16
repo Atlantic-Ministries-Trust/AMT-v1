@@ -16,49 +16,69 @@ export function WaysToGive() {
         <div className="space-y-8">
             <h3 className="font-serif text-3xl font-black text-royal-blue text-center uppercase tracking-tight">Global Ways to Give</h3>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Zelle */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
-                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
-                        <span className="font-black text-2xl text-royal-blue">Zelle</span>
-                        <div className="bg-gray-50 w-full py-3 rounded-lg font-mono font-bold text-lg text-gray-700 flex items-center justify-center gap-2 group cursor-pointer" onClick={() => copyToClipboard("518-288-5864", "zelle")}>
-                            <span className="truncate">518-288-5864</span>
-                            <span className="text-gray-400 group-hover:text-royal-blue transition-colors">
-                                {copied === "zelle" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+                <div className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
+                    <div className="flex flex-col items-center text-center gap-6 flex-grow justify-center">
+                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-2">
+                            <span className="font-black text-3xl text-royal-blue">Z</span>
+                        </div>
+                        <span className="font-black text-2xl text-royal-blue uppercase tracking-tight">Zelle</span>
+                        <div
+                            className="bg-gray-50 w-full py-4 px-4 rounded-xl font-mono font-bold text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-royal-blue/20 transition-all cursor-pointer whitespace-nowrap"
+                            onClick={() => copyToClipboard("518-288-5864", "zelle")}
+                        >
+                            <span>518-288-5864</span>
+                            <span className="text-gray-400 group-hover:text-royal-blue transition-colors shrink-0">
+                                {copied === "zelle" ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                             </span>
                         </div>
-                        <p className="text-xs text-gray-500 font-medium">Use our phone number to find us.</p>
+                        <p className="text-sm text-gray-500 font-medium">Use our phone number to find us.</p>
                     </div>
                 </div>
 
                 {/* Venmo */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
-                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
-                        <span className="font-black text-2xl text-[#008CFF]">Venmo</span>
-                        <div className="bg-gray-50 w-full py-3 px-2 rounded-lg font-mono font-bold text-xs sm:text-sm md:text-base text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-2 group cursor-pointer break-all" onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}>
+                <div className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
+                    <div className="flex flex-col items-center text-center gap-6 flex-grow justify-center">
+                        <div className="w-16 h-16 bg-[#008CFF]/10 rounded-2xl flex items-center justify-center mb-2">
+                            <span className="font-black text-3xl text-[#008CFF]">V</span>
+                        </div>
+                        <span className="font-black text-2xl text-[#008CFF] uppercase tracking-tight">Venmo</span>
+                        <div
+                            className="bg-gray-50 w-full py-4 px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#008CFF]/20 transition-all cursor-pointer whitespace-nowrap"
+                            onClick={() => copyToClipboard("@AtlanticMinistriesTrust", "venmo")}
+                        >
                             <span>@AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#008CFF] transition-colors shrink-0">
-                                {copied === "venmo" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+                                {copied === "venmo" ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                             </span>
                         </div>
-                        <a href="https://venmo.com/u/AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#008CFF] hover:underline mt-auto">
+                        <a href="https://venmo.com/u/AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-[#008CFF] hover:underline mt-auto flex items-center gap-2">
                             Open Venmo App
+                            <span className="text-xs">↗</span>
                         </a>
                     </div>
                 </div>
 
                 {/* Cash App */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
-                    <div className="flex flex-col items-center text-center gap-4 flex-grow justify-center">
-                        <span className="font-black text-2xl text-[#00D632]">Cash App</span>
-                        <div className="bg-gray-50 w-full py-3 px-2 rounded-lg font-mono font-bold text-xs sm:text-sm md:text-base text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-2 group cursor-pointer break-all" onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}>
+                <div className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
+                    <div className="flex flex-col items-center text-center gap-6 flex-grow justify-center">
+                        <div className="w-16 h-16 bg-[#00D632]/10 rounded-2xl flex items-center justify-center mb-2">
+                            <span className="font-black text-3xl text-[#00D632]">$</span>
+                        </div>
+                        <span className="font-black text-2xl text-[#00D632] uppercase tracking-tight">Cash App</span>
+                        <div
+                            className="bg-gray-50 w-full py-4 px-4 rounded-xl font-mono font-bold text-sm sm:text-base lg:text-lg text-gray-700 flex items-center justify-center gap-3 border border-transparent group-hover:border-[#00D632]/20 transition-all cursor-pointer whitespace-nowrap"
+                            onClick={() => copyToClipboard("$AtlanticMinistriesTrust", "cashapp")}
+                        >
                             <span>$AtlanticMinistriesTrust</span>
                             <span className="text-gray-400 group-hover:text-[#00D632] transition-colors shrink-0">
-                                {copied === "cashapp" ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+                                {copied === "cashapp" ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                             </span>
                         </div>
-                        <a href="https://cash.app/$AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#00D632] hover:underline mt-auto">
+                        <a href="https://cash.app/$AtlanticMinistriesTrust" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-[#00D632] hover:underline mt-auto flex items-center gap-2">
                             Open Cash App
+                            <span className="text-xs">↗</span>
                         </a>
                     </div>
                 </div>
