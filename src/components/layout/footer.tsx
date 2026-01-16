@@ -49,7 +49,9 @@ export function Footer() {
                             <li><Link href="/who-we-are" className="hover:text-white transition-colors">Who We Are</Link></li>
                             <li><Link href="/discipleship-outreach" className="hover:text-white transition-colors">Discipleship</Link></li>
                             <li><Link href="/scripture-resources" className="hover:text-white transition-colors">Scripture Resources</Link></li>
-                            <li><Link href="/donate" className="hover:text-white transition-colors">Make a Donation</Link></li>
+                            <li><Link href="/campaigns" className="hover:text-white transition-colors">Campaigns</Link></li>
+                            <li><Link href="/donate" className="hover:text-white transition-colors">Ways to Give</Link></li>
+                            <li><a href="https://atlanticflagpole.com" target="_blank" rel="noopener noreferrer" className="hover:text-golden-yellow transition-colors font-bold">Shop to Support</a></li>
                             <li><Link href="/privacy" className="hover:text-golden-yellow transition-colors font-bold">Privacy Policy</Link></li>
                         </ul>
                     </div>
@@ -59,8 +61,8 @@ export function Footer() {
                         <h4 className="font-serif text-lg font-black text-golden-yellow uppercase tracking-tighter">Mission Statement</h4>
                         <p className="text-xs text-gray-400 font-medium leading-relaxed">
                             Atlantic Ministries Trust is a 501(c)(3) non-profit organization dedicated to the spiritual revival of our nation.
-                            No goods or services were provided in exchange for this contribution.
-                            All donations are tax-deductible to the full extent of the law.
+                            Donations are voluntary contributions and donors do not receive goods or services in exchange.
+                            Merchandise purchases include the purchased item(s), and net proceeds support our mission and campaigns.
                         </p>
                         <div className="flex gap-4 pt-4">
                             <a href="#" className="hover:text-golden-yellow transition-colors"><Facebook className="w-6 h-6" /></a>

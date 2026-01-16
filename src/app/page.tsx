@@ -58,6 +58,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Campaigns Preview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl font-black text-royal-blue mb-4 uppercase tracking-tighter">Support a Campaign</h2>
+            <div className="h-1.5 w-24 bg-golden-yellow mx-auto rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Do Good - Featured */}
+            <div className="lg:col-span-3 bg-gradient-to-r from-royal-blue to-blue-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl group">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 justify-between">
+                <div className="text-center md:text-left space-y-4 max-w-2xl">
+                  <div className="inline-block bg-golden-yellow text-royal-blue font-black px-4 py-1 rounded-full text-sm uppercase tracking-wider mb-2">
+                    Featured Campaign
+                  </div>
+                  <h3 className="font-serif text-3xl md:text-5xl font-black uppercase tracking-tight">Do Good: Patriot Edition</h3>
+                  <p className="text-blue-100 text-lg md:text-xl font-medium">One Nation—Love Over Fear. Help us reach our <span className="text-golden-yellow font-black">$25,000 Goal</span> to strengthen communities and serve our neighbors.</p>
+                </div>
+                <Link href="/campaigns/do-good">
+                  <Button size="lg" className="bg-white text-royal-blue hover:bg-golden-yellow hover:text-royal-blue font-black text-xl px-10 py-8 shadow-lg transition-all transform group-hover:scale-105">
+                    Join the Movement
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Other Campaigns */}
+            <Link href="/campaigns/meals" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
+              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">Meals for Families</h3>
+              <p className="text-gray-600 mb-6 font-medium">Providing food and groceries to families and children in need.</p>
+              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
+                Learn More →
+              </span>
+            </Link>
+
+            <Link href="/campaigns/veterans-dogs" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
+              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">Veterans + Dogs</h3>
+              <p className="text-gray-600 mb-6 font-medium">Pairing veterans with unwanted dogs for companionship and purpose.</p>
+              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
+                Learn More →
+              </span>
+            </Link>
+
+            <Link href="/campaigns/victory-church-nigeria" className="group bg-gray-50 p-8 rounded-2xl border-2 border-gray-100 hover:border-golden-yellow hover:shadow-lg transition-all">
+              <h3 className="font-serif text-2xl font-black text-royal-blue mb-3 uppercase">International Mission</h3>
+              <p className="text-gray-600 mb-6 font-medium">Supporting Victory Church Nigeria with urgent relief and safety.</p>
+              <span className="font-bold text-royal-blue group-hover:text-golden-yellow uppercase tracking-wide text-sm flex items-center gap-2">
+                Learn More →
+              </span>
+            </Link>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/campaigns">
+              <Button variant="outline" size="lg" className="font-black text-lg px-8 border-2">
+                View All Campaigns
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
