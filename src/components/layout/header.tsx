@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -170,12 +170,26 @@ export function Header() {
                         </div>
                     </details>
 
+                    {/* eBook (Promoted) */}
+                    <Link
+                        href="/ebook"
+                        className={cn(
+                            "flex items-center gap-2 group px-3 py-1.5 rounded-full border transition-all",
+                            useDarkTheme
+                                ? "bg-royal-blue/5 border-royal-blue/20 text-royal-blue hover:bg-royal-blue hover:text-white"
+                                : "bg-white/10 border-white/20 text-white hover:bg-white hover:text-royal-blue"
+                        )}
+                    >
+                        <BookOpen size={16} />
+                        <span className="text-sm font-black uppercase tracking-widest">Get eBook</span>
+                    </Link>
+
                     {/* Shop to Support (External) */}
                     <a
                         href="https://atlanticflagpole.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 group"
+                        className="flex items-center gap-2 group ml-2"
                     >
                         <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                             <Image
@@ -189,7 +203,7 @@ export function Header() {
                             "text-base font-semibold tracking-wide transition-colors group-hover:text-golden-yellow uppercase",
                             useDarkTheme ? "text-royal-blue" : "text-white/90"
                         )}>
-                            Shop to Support
+                            Shop
                         </span>
                     </a>
                 </nav>
@@ -268,6 +282,19 @@ export function Header() {
                                 ))}
                             </div>
                         </div>
+
+                        {/* eBook (Mobile) */}
+                        <Link
+                            href="/ebook"
+                            className={cn(
+                                "text-xl font-bold py-4 border-b border-gray-100 flex items-center gap-3",
+                                pathname === "/ebook" ? "text-golden-yellow" : "text-royal-blue"
+                            )}
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            <BookOpen size={24} className="text-royal-blue" />
+                            Pre-order eBook
+                        </Link>
 
                         <a
                             href="https://atlanticflagpole.com"

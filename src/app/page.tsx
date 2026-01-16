@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BookOpen } from "lucide-react";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
@@ -70,7 +71,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Discover Campaigns */}
+      {/* eBook Announcement */}
+      <section className="py-24 bg-gray-50 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden border-2 border-gray-100 flex flex-col lg:flex-row items-center">
+            {/* 3D Preview */}
+            <div className="w-full lg:w-2/5 p-12 flex justify-center bg-royal-blue/5">
+              <div className="relative w-48 h-72 md:w-64 md:h-96 shadow-2xl transition-transform hover:scale-105 duration-500">
+                <Image
+                  src="/images/the-descending-path-ebook.jpg"
+                  alt="The Descending Path eBook"
+                  fill
+                  className="object-cover rounded-r-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent pointer-events-none" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="w-full lg:w-3/5 p-12 md:p-16 space-y-6">
+              <div className="flex items-center gap-2 text-royal-blue font-black uppercase tracking-widest text-sm">
+                <span className="w-8 h-1 bg-royal-blue rounded-full"></span>
+                Special Release
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-royal-blue leading-tight uppercase tracking-tight">
+                Get "The Descending <br />Path" eBook
+              </h2>
+              <p className="text-xl text-gray-600 font-medium leading-relaxed">
+                Be among the first to receive this transformative work. Available now for pre-order with a donation of any amount.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/ebook">
+                  <Button size="lg" className="w-full sm:w-auto text-lg px-10 shadow-xl">
+                    Pre-order Now
+                  </Button>
+                </Link>
+                <div className="flex items-center gap-3 text-royal-blue/70 font-bold px-4">
+                  <BookOpen size={20} />
+                  <span>Includes PDF Download</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-24 bg-royal-blue text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">

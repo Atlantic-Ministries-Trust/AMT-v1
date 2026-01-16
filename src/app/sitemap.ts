@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/scripture-resources",
         "/discipleship-outreach",
         "/patriotism-faith",
+        "/ebook",
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
