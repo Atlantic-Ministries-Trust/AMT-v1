@@ -19,7 +19,7 @@ export default function ScriptureResources() {
     return (
         <main className="min-h-screen bg-white">
             <Header />
-            <div className="pt-24 pb-16 px-4 container mx-auto animate-fade-in-up">
+            <div className="pt-32 pb-16 px-4 container mx-auto animate-fade-in-up md:pt-40">
                 <div className="text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl font-bold text-royal-blue mb-4">Scripture Resources</h1>
                     <div className="h-1 w-24 bg-golden-yellow mx-auto rounded-full" />
@@ -37,17 +37,21 @@ export default function ScriptureResources() {
                         <p className="mt-8 text-gray-200">
                             Start your day with truth. We provide daily readings and reflections to guide your walk with Christ.
                         </p>
-                        <Button variant="secondary" className="mt-6" size="lg">Read Today's Devotion</Button>
+                        <Button variant="secondary" className="mt-6 shadow-[6px_6px_0px_rgba(0,0,0,0.2)]" size="lg" asChild>
+                            <a href="/scripture-resources/daily-devotion">Read Today's Devotion</a>
+                        </Button>
                     </div>
 
-                    <h2 className="font-serif text-3xl font-bold text-royal-blue mb-8 text-center">Resource Library</h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <h2 className="font-serif text-3xl md:text-5xl font-black text-royal-blue mb-12 text-center uppercase tracking-tighter">Resource Library</h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
                         {resources.map((res, index) => (
-                            <div key={index} className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
-                                <div className="text-xs font-bold text-golden-yellow uppercase tracking-wider mb-3 bg-royal-blue/5 inline-block px-3 py-1 rounded-full">{res.type}</div>
-                                <h3 className="font-serif text-2xl font-bold text-gray-800 mb-3">{res.title}</h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">{res.description}</p>
-                                <Button variant="outline" size="sm" className="w-full">Access Resource</Button>
+                            <div key={index} className="bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-2d transition-all hover:-translate-y-1">
+                                <div className="text-xs font-black text-golden-yellow uppercase tracking-widest mb-3 bg-royal-blue/5 inline-block px-4 py-1.5 rounded-full border border-royal-blue/10">{res.type}</div>
+                                <h3 className="font-serif text-2xl font-black text-gray-800 mb-3">{res.title}</h3>
+                                <p className="text-gray-600 leading-relaxed mb-8 font-medium">{res.description}</p>
+                                <Button variant="outline" size="default" className="w-full" asChild>
+                                    <a href="/scripture-resources/in-depth-reading">Access Full Guide</a>
+                                </Button>
                             </div>
                         ))}
                     </div>

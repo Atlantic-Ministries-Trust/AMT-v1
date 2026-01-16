@@ -50,15 +50,15 @@ export function Footer() {
                             <li><Link href="/discipleship-outreach" className="hover:text-white transition-colors">Discipleship</Link></li>
                             <li><Link href="/scripture-resources" className="hover:text-white transition-colors">Scripture Resources</Link></li>
                             <li><Link href="/donate" className="hover:text-white transition-colors">Make a Donation</Link></li>
-                            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/privacy" className="hover:text-golden-yellow transition-colors font-bold">Privacy Policy</Link></li>
                         </ul>
                     </div>
 
                     {/* Legal */}
                     <div className="space-y-4">
-                        <h4 className="font-serif text-lg font-bold text-golden-yellow">Contribution</h4>
-                        <p className="text-xs text-gray-400">
-                            Atlantic Ministries Trust is a 501(c)(3) non-profit organization.
+                        <h4 className="font-serif text-lg font-black text-golden-yellow uppercase tracking-tighter">Mission Statement</h4>
+                        <p className="text-xs text-gray-400 font-medium leading-relaxed">
+                            Atlantic Ministries Trust is a 501(c)(3) non-profit organization dedicated to the spiritual revival of our nation.
                             No goods or services were provided in exchange for this contribution.
                             All donations are tax-deductible to the full extent of the law.
                         </p>

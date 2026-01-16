@@ -31,7 +31,7 @@ export default function Donate() {
     return (
         <main className="min-h-screen bg-white">
             <Header />
-            <div className="pt-24 pb-16 px-4 container mx-auto animate-fade-in-up">
+            <div className="pt-32 pb-16 px-4 container mx-auto animate-fade-in-up md:pt-40">
                 <div className="text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl font-bold text-royal-blue mb-4">Make a Donation</h1>
                     <div className="h-1 w-24 bg-golden-yellow mx-auto rounded-full" />

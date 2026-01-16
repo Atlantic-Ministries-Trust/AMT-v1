@@ -14,7 +14,7 @@ export default function Discipleship() {
     return (
         <main className="min-h-screen bg-white">
             <Header />
-            <section className="pt-24 pb-16 px-4 container mx-auto animate-fade-in-up">
+            <section className="pt-32 pb-16 px-4 container mx-auto animate-fade-in-up md:pt-40">
                 <div className="text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl font-bold text-royal-blue mb-4">Discipleship & Outreach</h1>
                     <div className="h-1 w-24 bg-golden-yellow mx-auto rounded-full" />
@@ -39,15 +39,15 @@ export default function Discipleship() {
                                 We offer deep-dive study groups and resources to help you understand Scripture and apply it to daily life.
                                 Our curriculum focuses on the foundations of the faith, apologetics, and biblical citizenship.
                             </p>
-                            <Button variant="outline" asChild><a href="/scripture-resources">View Resources</a></Button>
+                            <Button variant="outline" asChild><a href="/scripture-resources/in-depth-reading">View Training Manual</a></Button>
                         </div>
-                        <div className="p-8 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow bg-royal-blue text-white">
-                            <h3 className="font-serif text-2xl font-bold text-golden-yellow mb-4">Community Outreach</h3>
-                            <p className="text-gray-100 mb-6">
+                        <div className="p-8 border-2 border-royal-blue/10 rounded-2xl hover:shadow-2d transition-all bg-royal-blue text-white shadow-lg">
+                            <h3 className="font-serif text-2xl font-black text-golden-yellow mb-4 uppercase tracking-tighter">Community Outreach</h3>
+                            <p className="text-gray-100 mb-6 font-medium">
                                 From food drives to street evangelism, we are the hands and feet of Jesus in Schenectady.
                                 We believe faith without works is dead, and we are committed to serving our neighbors.
                             </p>
-                            <Button variant="secondary" asChild><a href="/contact">Get Involved</a></Button>
+                            <Button variant="secondary" asChild className="shadow-[4px_4px_0px_rgba(0,0,0,0.3)]"><a href="/contact">Get Involved Now</a></Button>
                         </div>
                     </div>
                 </div>
