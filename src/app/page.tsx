@@ -39,7 +39,7 @@ export default function Home() {
               </Button>
             </Link>
             <Link href="/who-we-are">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 border-white text-white hover:bg-white/20 hover:text-white">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 border-white text-white bg-transparent shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] hover:bg-white/10 hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.3)]">
                 Learn More
               </Button>
             </Link>

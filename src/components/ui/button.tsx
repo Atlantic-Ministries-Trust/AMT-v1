@@ -22,7 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const variants = {
             primary: "bg-royal-blue text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none",
             secondary: "bg-golden-yellow text-royal-blue shadow-[4px_4px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none",
-            outline: "border-2 border-royal-blue bg-white text-royal-blue shadow-[4px_4px_0px_0px_#1a237e] hover:shadow-[2px_2px_0px_0px_#1a237e] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none",
+            outline: "border-2 border-royal-blue bg-transparent text-royal-blue shadow-[4px_4px_0px_0px_#1a237e] hover:shadow-[2px_2px_0px_0px_#1a237e] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none",
             ghost: "hover:bg-royal-blue/10 text-royal-blue",
         };
 
