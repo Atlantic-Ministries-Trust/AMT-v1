@@ -60,7 +60,7 @@ export function Footer() {
                     <div className="space-y-4">
                         <h4 className="font-serif text-lg font-black text-golden-yellow uppercase tracking-tighter">Mission Statement</h4>
                         <p className="text-xs text-gray-400 font-medium leading-relaxed">
-                            Atlantic Ministries Trust is a 501(c)(3) non-profit organization dedicated to the spiritual revival of our nation.
+                            Atlantic Ministries Trust is a 508(c)1(a) non-profit organization dedicated to the spiritual revival of our nation.
                             Donations are voluntary contributions and donors do not receive goods or services in exchange.
                             Merchandise purchases include the purchased item(s), and net proceeds support our mission and campaigns.
                         </p>
