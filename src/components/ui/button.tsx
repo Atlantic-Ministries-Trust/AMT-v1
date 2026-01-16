@@ -1,0 +1,52 @@
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cn } from "@/lib/utils";
+
+// Start with simple button since we didn't install cva yet, wait, I forgot cva.
+// I'll install class-variance-authority next. Used often.
+// For now, I'll write it without cva or install it quickly.
+// Actually, I'll stick to simple props for now to save time, or use clsx directly.
+// But standard shadcn-like uses cva. I'll just use clsx/tailwind for now.
+
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    asChild?: boolean;
+    variant?: "primary" | "secondary" | "outline" | "ghost";
+    size?: "default" | "sm" | "lg" | "icon";
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    ({ className, variant = "primary", size = "default", asChild = false, ...props }, ref) => {
+        const Comp = asChild ? Slot : "button";
+
+        // Base styles
+        const baseStyles = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+
+        // Variants
+        const variants = {
+            primary: "bg-royal-blue text-white hover:bg-royal-blue/90 shadow-md",
+            secondary: "bg-golden-yellow text-royal-blue hover:bg-golden-yellow/90 shadow-sm",
+            outline: "border border-royal-blue bg-transparent text-royal-blue hover:bg-royal-blue/10",
+            ghost: "hover:bg-accent hover:text-accent-foreground",
+        };
+
+        // Sizes
+        const sizes = {
+            default: "h-10 px-4 py-2",
+            sm: "h-9 rounded-md px-3",
+            lg: "h-11 rounded-md px-8 text-base",
+            icon: "h-10 w-10",
+        };
+
+        return (
+            <button
+                className={cn(baseStyles, variants[variant], sizes[size], className)}
+                ref={ref}
+                {...props}
+            />
+        );
+    }
+);
+Button.displayName = "Button";
+
+export { Button };
